@@ -1,3 +1,3 @@
 # Cell type quantification
-This code uses threshold values to quantify cell types.
-After cell types are identified, thresholds for specific markers can be used to identify marker +/- cells
+This code uses thresholded binary (pos or neg expression) values to quantify cell types.
+After cell types are identified, expression of neuronal adhesion markers are quantified within each cell type and plotted using ggplot2
