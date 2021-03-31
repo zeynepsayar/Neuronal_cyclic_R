@@ -1,4 +1,5 @@
 ####plotting####
+#cell types already quantified (basal, luminal, Neuroendocrine. endothelial, immune, neuronal) are plotted using R ggplot2 library
 
 #create a table with the cell types and number of cells that express marker of interest
 myDF <- read.table(text="marker basal     luminal    neuroendocrine     endothelial     immune     neuronal
