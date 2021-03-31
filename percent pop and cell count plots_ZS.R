@@ -7,7 +7,7 @@ NRXN1+    4364 16203 9 988 1603 119
 NRXN1-   1495 3513 5 2855 2762 165", header=TRUE)
 View(myDF)
 
-install.packages("tidyverse") #only need to install once
+install.packages("tidyverse") 
 library(scales)
 library(ggplot2)
 library(reshape2)
