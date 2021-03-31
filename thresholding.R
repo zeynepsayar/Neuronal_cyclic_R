@@ -1,5 +1,5 @@
 features <-read.csv("sampleID.csv", header = TRUE, sep=",")
-#the data sampleID.csv contains binarized expression for cell type markers and neuronal adhesion markers (NLGN and NRXN)
+#the data sampleID.csv contains binarized expression for cell type markers and neuronal adhesion markers (NLGN and NRXN), available upon request (email: sayar@ohsu.edu or eksi@ohsu.edu)
 
 #View(features)
 #colnames(features)
@@ -9,13 +9,6 @@ features <-read.csv("sampleID.csv", header = TRUE, sep=",")
 
 fts_edited <- features[!features$ROI_ID == 0, ] #features for only cells in ROIs selected
 
-
-####rest####
-
-
-fts_edited$ALL_NLGN1 <- fts_edited$ROI1.NLGN1 + fts_edited$ROI2.NLGN1 + fts_edited$ROI3.NLGN1
-fts_edited$ALL_AMACR <- fts_edited$ROI1.AMACR + fts_edited$ROI2.AMACR + fts_edited$ROI3.AMACR
-fts_edited$ALL_NCAM <- fts_edited$ROI2.NCAM #b/c only NCAM is in ROI2 so no need to add
 
 #markers we have: CK5, CK8, CD31, CD3, NCAM - our main cell types
 #molecular markers: NLGN1, NRXN1 (coexpression with all of the above wanted)
@@ -56,10 +49,5 @@ NCAMNRXN1_IDs <- fts_edited[fts_edited$ALL_NCAM == 1 & fts_edited$NRXN1pos == 1,
 length(NCAMNRXN1_IDs) 
 NRXN1NLGN1_NCAM <- NCAMNRXN1_IDs[NCAMNRXN1_IDs %in% NCAMNLGN1_IDs] 
 length(NRXN1NLGN1_NCAM) 
-
-
-#other markers: Ki67 (coexpression with all celltypes wanted), AMACR (coexpression w/ CK5 and CK8)
-
-#AR_genes[AR_genes %in% top_DEGs] 
 
 
