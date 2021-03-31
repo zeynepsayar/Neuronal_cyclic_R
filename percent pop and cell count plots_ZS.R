@@ -20,4 +20,7 @@ ggplot(DF1, aes(x = variable, y = value, fill = marker))  + geom_bar(stat = 'ide
 #amount of cells (cell counts) by cell type by marker expression - only need to change the "ggtitle" here
 ggplot(DF1, aes(x = variable, y = value, fill = marker)) + geom_bar(stat = 'identity') +labs(y = "Cells", x = "Cell Type") + ggtitle("All_Low_Risk") +theme_bw(base_family = "Times") #optional if you want white background
 
-#click "export" on the bottom right window and save the plot as tiff
+
+#mapping the location of cells:
+qplot(x = Nuc.X, y = Nuc.Y, data = features, geom = "point")
+qplot(x = Nuc.X, y = Nuc.Y, data = features, geom = "point", color = ROI_ID) #ROI locations
